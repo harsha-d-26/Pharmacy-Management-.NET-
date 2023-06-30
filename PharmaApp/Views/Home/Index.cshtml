@@ -1,0 +1,56 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<body style="background-color: #e3f2fd; ">
+
+    <div class="text-center">
+        <h1 class="display-4">Welcome To PharmaApp</h1>
+        <p>Serving Your Med-needs</p>
+        <img src="~/images/homepage.png" style=" width:50%;" />
+
+
+    </div>
+    <br />
+    <br />
+    <div class="row row-cols-1 row-cols-md-2 g-4" style=" margin-left:180px;">
+        <div class="card" style="width: 18rem; ">
+
+            <div class="card-body" style=" display:inline;">
+                <h5></h5>
+                <h5 class="card-title">Medicines</h5>
+                <p class="card-text">Medicine inventory displays information such as name, expiry and quantity about the medicines that are in stock in pharmacy.</p>
+                <a class="btn btn-primary" asp-controller="Medicines" asp-action="Index">Medicines</a>
+            </div>
+        </div>
+        <div class="card" style="width: 18rem; margin-left:160px ">
+            <div class="card-body" style=" display:inline;">
+                <h5></h5>
+                <h5 class="card-title">Purchases</h5>
+                <p class="card-text">Purchases page allows you to view the medicines purchased along with details such as quantity, price and date.</p>
+                <a class="btn btn-primary" asp-controller="Purchases" asp-action="Index">Purchases</a>
+            </div>
+        </div>
+    </div>
+    <br />
+    <br />
+    <div class="row row-cols-1 row-cols-md-2 g-4" style=" margin-left:180px;">
+        <div class="card" style="width: 18rem; ">
+
+            <div class="card-body" style=" display:inline;">
+                <h5></h5>
+                <h5 class="card-title">Sales</h5>
+                <p class="card-text">This page showcases the details such as date, medicine name, etc about sales occured in the past.</p>
+                <a class="btn btn-primary" asp-controller="Sales" asp-action="Index">Sales     </a>
+            </div>
+        </div>
+        <div class="card" style="width: 18rem; margin-left:160px ">
+            <div class="card-body" style=" display:inline;">
+                <h5></h5>
+                <h5 class="card-title">Suppliers</h5>
+                <p class="card-text">This page allows you to view information about suppliers. This include supplier's name, address and phone number.</p>
+                <a class="btn btn-primary" asp-controller="Suppliers" asp-action="Index">Suppliers</a>
+            </div>
+        </div>
+    </div>
+</body>
+

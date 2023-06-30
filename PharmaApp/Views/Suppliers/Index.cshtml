@@ -1,0 +1,55 @@
+﻿@model IEnumerable<PharmaApp.Models.Supplier>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<body style="background-color: #e3f2fd;">
+    <h1>Suppliers</h1>
+
+    <p>
+        <a asp-action="Create">Add New Supplier</a>
+    </p>
+    <table class="table">
+        <thead class="table thead-dark table-bordered table-hover">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.sup_name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.phone_no)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.address)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.email)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody class="table thead-light table-bordered table-hover">
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.sup_name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.phone_no)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.address)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.email)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.sup_id">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.sup_id">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.sup_id">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>

@@ -1,0 +1,44 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+<ul class="navbar-nav">
+    @if (SignInManager.IsSignedIn(User))
+    {
+
+        <li class="nav-item">
+            <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-light" asp-area="" asp-controller="Medicines" asp-action="Index">Medicines</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-light" asp-area="" asp-controller="Purchases" asp-action="Index">Purchases</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-light" asp-area="" asp-controller="Sales" asp-action="Index">Sales</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-light" asp-area="" asp-controller="Suppliers" asp-action="Index">Suppliers</a>
+        </li>
+        
+        <li class="nav-item" style="margin-left: 350px">
+            <a class="nav-link text-light" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @User.Identity.Name!</a>
+        </li>
+        <li class="nav-item">
+            <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+                <button type="submit" class="nav-link btn btn-link text-light">Logout</button>
+            </form>
+        </li>
+        
+    }
+    else
+    {
+        <li class="nav-item" style="margin-left: 820px">
+            <a class="nav-link text-light" asp-area="Identity" asp-page="/Account/Register">Register</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-light" asp-area="Identity" asp-page="/Account/Login">Login</a>
+        </li>
+    }
+</ul>

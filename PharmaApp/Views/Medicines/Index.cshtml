@@ -1,0 +1,73 @@
+﻿@model IEnumerable<PharmaApp.Models.Medicines>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<body style="background-color: #e3f2fd;">
+    <h1>Medicines</h1>
+
+    <p>
+        <a asp-action="Create">Add New Medicine</a>
+    </p>
+    <table class="table">
+        <thead>
+            <tr class="table thead-dark table-bordered table-hover">
+                <th>
+                    @Html.DisplayNameFor(model => model.med_name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.category)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.price)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.quantity)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.rack)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.mfg_date)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.exp_date)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr class=" table thead-light table-bordered table-hover ">
+                    <td>
+                        @Html.DisplayFor(modelItem => item.med_name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.category)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.price)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.quantity)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.rack)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.mfg_date)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.exp_date)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.med_id">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.med_id">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.med_id">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+</body>
+</table>
